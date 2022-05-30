@@ -26,7 +26,7 @@ class Game:
             self.display_results()
             self.add_win()
             self.player_reset()
-
+ 
             for player in self.players:
                 if player.wins > 1:
                     self.winner = player.name
@@ -54,7 +54,6 @@ class Game:
             if self.players[each].choice == 3: self.players[each].choice = 'Scissors'
             if self.players[each].choice == 4: self.players[each].choice = 'Lizard'
             if self.players[each].choice == 5: self.players[each].choice = 'Spock'
-
 
     def check_results(self):
         rock_wins = ['Scissors', 'Lizard']
@@ -85,6 +84,9 @@ class Game:
                 if self.players[0].choice == 'Spock':
                     if self.players[1].choice in spock_wins: self.round_winner = self.players[0].name
                     if self.players[1].choice in spock_loses: self.round_winner = self.players[1].name
+                if self.round_winner == '': self.round_winner = 'Tie'
+
+
 
             if not self.ai_player and len(self.players) < 4:
                 if self.players[1].choice == 'Rock':
@@ -103,8 +105,8 @@ class Game:
                     if self.players[2].choice in spock_wins: self.round_winner = self.players[1].name
                     if self.players[2].choice in spock_loses: self.round_winner = self.players[2].name
 
-            if self.round_winner == '': self.round_winner = 'Tie'
-
+                if self.round_winner == '': self.round_winner = 'Tie' 
+               
     def display_results(self):
         print('')
 
@@ -117,8 +119,8 @@ class Game:
             if player.choice == 'Spock': spock()
 
             time.sleep(2)
-        if self.round_winner == 'Tie':
-            print('This was a tie! Let\'s go again')
+        if self.round_winner == 'Tie':   
+            print('This round was a tie! Let\'s go again')
             time.sleep(3.5)
         else:
             print(f'\n{self.round_winner} won this round.')
