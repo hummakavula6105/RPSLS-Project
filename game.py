@@ -40,7 +40,7 @@ class Game:
                 print(f'\n--------Round {self.rounds_played}--------')
                 rules()
                 while self.players[each].choice == '':
-                    self.players[each].choice = input('Make your selection: ')
+                    self.players[each].choice = input('What action do you wish to take against your opponent?: ')
                     if not self.players[each].choice.isdigit():
                         self.players[each].choice = ''
                     else:
@@ -121,7 +121,7 @@ class Game:
             print('This was a tie! Let\'s go again')
             time.sleep(3.5)
         else:
-            print(f'\n{self.round_winner} won this round. Great job!')
+            print(f'\n{self.round_winner} won this round.')
             time.sleep(3.5)
 
         return
