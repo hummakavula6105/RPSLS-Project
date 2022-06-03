@@ -37,7 +37,12 @@ class Game:
     def display_results(self):
         print('')
 
+        
+
         for player in self.players:
+            if not self.ai_player:
+                if player == self.players[0]: continue
+            
             print(f'{player.name} chose {player.choice}')
             if player.choice == 'Rock': rock()
             if player.choice == 'Scissors': scissors()

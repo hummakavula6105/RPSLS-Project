@@ -30,7 +30,7 @@ class Setup:
         return
 
     def create_players(self):
-        computer = Computer()
+        computer = Computer(self.ai_player)
         self.players.append(computer)
 
         for each in range(self.num_of_players):

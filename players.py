@@ -16,10 +16,15 @@ class Player:
     
     
 class Computer(Player):
-    def __init__(self):
+    def __init__(self, ai_player):
         super().__init__()
-        self.name = input('What name do you wish the computer to have?: ')
         self.human = False
+        if ai_player:
+            self.get_name()
+        
+    
+    def get_name(self):
+        self.name = input('What name do you wish the computer to have?: ')
         
 class Human(Player):
     def __init__(self):
@@ -31,9 +36,9 @@ def get_choice(players, rounds_played):
         if not players[each].human:
             players[each].choice = random.randint(1, 5)
         else:
-            print(f'\n----Round {rounds_played}   Player {each}----')
+            print(f'\n--------Round {rounds_played}--------')
             rules()
-            players[each].choice = validate_int_input('What action do you wish to take against your opponent?: ')
+            players[each].choice = validate_int_input(f'{players[each].name}, what action do you wish to take against your opponent?: ')
 
         if players[each].choice == 1: players[each].choice = 'Rock'
         if players[each].choice == 2: players[each].choice = 'Paper'
