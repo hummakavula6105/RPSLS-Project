@@ -3,7 +3,7 @@ def validate_int_input(prompt):
         choice = int(input(prompt))
         if choice < 6 and choice > 0:
             return choice
-        
+        #https://www.w3schools.com/python/python_try_except.asp
     except:
         validate_int_input(prompt)
         
