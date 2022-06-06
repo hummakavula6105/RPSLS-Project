@@ -2,19 +2,13 @@
 # Outline
 
 - write entry statement
-
 - ask how many players / AI involvement
-
 - show rules
-
 - begin game statement
-
 - input(user selection) * 3 (if chosen)
 - AI selection
-- repeat 3 times
-
+- creat loops for rounds
 - announce winner
-- ask if a new game is to be started
 
 # Algorithm Steps & Such
 
@@ -24,7 +18,7 @@
 - game rules
 - run the game
     - loops rounds (best out of 3)
-    - prints winner / tied rounds
+    - prints round winner / tied rounds
 - declare winner
 
 
