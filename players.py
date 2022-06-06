@@ -2,6 +2,9 @@
 import random
 from art import rules
 from utils import validate_int_input
+import os
+
+def clear(): os.system('cls')
 
 class Player:
     def __init__(self):
@@ -33,6 +36,7 @@ class Human(Player):
 
 def get_choice(players, rounds_played):
     for each in range(len(players)):
+        clear()
         if not players[each].human:
             players[each].choice = random.randint(1, 5)
         else:
