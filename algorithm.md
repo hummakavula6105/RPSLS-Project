@@ -8,7 +8,8 @@
 - input(user selection) * 3 (if chosen)
 - AI selection
 - creat loops for rounds
-- announce winner
+- declare winner
+
 
 # Algorithm Steps & Such
 
@@ -29,7 +30,8 @@
 - Will you be playing with the computer? Y/N:
     - If no, continues to ask how many human players (2 or 3)
  
-- Players generate their user name. If computer is playing, player can name the computer.
+- Players generate their user name. 
+    - If computer is playing, player can name the computer.
 
 - Rules: Here are the rules to the game, there are 3 rounds, best 2 out of 3. Here is the list of who beats who:
             1. Rock - crushes Scissors
@@ -51,11 +53,13 @@
     - If players made the same choice, this round is a tie
         - With 3 players:
             - Whomever has the choice that beats out the other two opponents
-            - OR if all 3 choices cancel one another out then this round is a tie
-            - Loop back to another round, no points awarded for this round
+                - Mini rounds played with 3 human players
+                    - Player 0 vs 1 first, then player 1 vs 2
+                    - This was done to keep the game moving faster rather than potential of X number of rounds
+            - Declare winner of this round
 
     - 2 / 3 rounds played - best of 3 wins
-        - If tie rounds encountered, statement prints "Tie, let's go again"
+        - If tie rounds encountered (except 3 players), statement prints "Tie, let's go again"
         - Loop back to another round, no points awarded for this round
 
     - Congratulation ***, you have outwitted your foes!
